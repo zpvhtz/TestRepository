@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+        </div>
+        <div class="col-sm-10">
+            <!-- <app-user-information [user]="user" [selected]="selected" (createUser)="evtCreateUser($event)" (updateUser)="evtUpdateUser($event)"></app-user-information> -->
+            <app-create-page [rows]="rows" [template]="btnGroupTemplate">
+                <ng-template #btnGroup>
+                    <button type="button" class="btn btn-primary" (click)="evtCreateUser()">Create</button>
+                    <button type="button" class="btn btn-danger" (click)="evtCancel()">Delete</button>
+                </ng-template>
+            </app-create-page>
+        </div>
+        <div class="col-sm">
+        </div>
+    </div>
+</div>

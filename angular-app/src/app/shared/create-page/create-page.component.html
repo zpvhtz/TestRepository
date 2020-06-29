@@ -1,0 +1,34 @@
+<table class="table table-bordered">
+    <tbody>
+        <tr *ngFor="let row of rows">
+            <th scope="row" [ngStyle]="{'text-align': 'center', 'vertical-align': 'middle'}">{{row.name}}</th>
+            <td [ngSwitch]="row.type">
+                <div *ngSwitchCase="'input'" class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+                </div>
+                <div *ngSwitchCase="'img'" class="input-group mb-3">
+                    <input id="input-{{row.name}}" type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
+                    <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" [ngStyle]="{'text-align': 'center'}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-5"></div>
+                        <ng-container *ngTemplateOutlet="test()"></ng-container>
+                        
+                        <!-- <div class="col-sm-1">
+                            <button class="btn btn-success" (click)="evtCreate()">Add</button>
+                        </div>
+                        <div class="col-sm-1">
+                            <button class="btn btn-danger" (click)="evtCancel()">Cancel</button>
+                        </div> -->
+                        <div class="col-sm-5"></div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

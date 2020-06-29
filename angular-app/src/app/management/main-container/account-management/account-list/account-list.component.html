@@ -1,0 +1,18 @@
+<div class="card mb-4">
+    <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable</div>
+    <div class="card-body">
+        <div>
+            <button cntCreateUser class="btn btn-primary" (click)="evtCreateAccount()">Create</button>
+        </div>      
+        <app-kendo-grid
+            [columns]="columns" [data]="accounts" [total]="total"
+            [pageSize]="pageSize" [pageNumber]="pageNumber" (skip)="evtSkip($event)"
+            [buttons]="buttons">
+            <ng-template let-dataItem #btnGroup>
+                <button type="button" class="btn btn-primary" (click)="evtEditAccount(dataItem.id)">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="evtDeleteAccount(dataItem.id)">Delete</button>
+            </ng-template>
+        </app-kendo-grid>
+    </div>
+</div>
+
